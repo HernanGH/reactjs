@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Clase11 from './components/Clase11';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <>
+      {/* <App /> */}
+      <Clase11 />
+    </>
   </React.StrictMode>,
   document.getElementById('root')
 );
