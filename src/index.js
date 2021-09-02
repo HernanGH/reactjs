@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import Clase11 from './components/Clase11';
 import reportWebVitals from './reportWebVitals';
+import AfterClase11 from './components/AfterClase11';
 
 ReactDOM.render(
   <React.StrictMode>
     <>
-      {/* <App /> */}
-      <Clase11 />
+      <App />
+      {/* <Clase11 /> */}
+      {/* <AfterClase11 /> */}
     </>
   </React.StrictMode>,
   document.getElementById('root')
