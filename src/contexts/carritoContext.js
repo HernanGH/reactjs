@@ -20,7 +20,6 @@ const carritoContext = createContext({});
 export const CarritoProvider = ({ children }) => {
   // 2 ESTADO QUE QUIERO COMPARTIR
   const [carrito, setCarrito] = useState([]);
-  console.log({carrito});
   
   const addItem = (item) => {
     const carritoDraft = [...carrito];
@@ -28,10 +27,15 @@ export const CarritoProvider = ({ children }) => {
     setCarrito(cleanCarrito);
   };
 
+  const removeItem = (itemId) => {
+    const carritoDraft = [...carrito];
+    const cleanCarrito = carritoDraft.filter(item => item.id !== itemId);
+    setCarrito(cleanCarrito);
+  };
 
   return (
     // 3 COMPARTIR EL ESTADO GLOBAL (Provider/value)
-    <carritoContext.Provider value={{ carrito, addItem }}>
+    <carritoContext.Provider value={{ carrito, addItem, removeItem }}>
       {/* componentes hijos  */}
       {children}
     </carritoContext.Provider>

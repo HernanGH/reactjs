@@ -2,13 +2,20 @@ import './App.css';
 import 'antd/dist/antd.css';
 
 import { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Banner from './components/Banner';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
 import { PetProvider } from './contexts/petContext';
-import Galeria from './containers/Galeria';
 import { CarritoProvider } from './contexts/carritoContext';
+import ItemList from './containers/ItemList';
+import Header from './components/Header';
 import Carrito from './components/Carrito/Carrito';
+import ItemDetail from './containers/ItemDetail';
 import { getDataBase } from './api/firebase';
+import Cart from './containers/Cart';
 
 const App = () => {
   const [visible, setVisible] = useState(false);
@@ -50,11 +57,20 @@ const App = () => {
     <div className="App">
       <PetProvider>
         <CarritoProvider>
-          <Header />
-          <Banner />
-          <button onClick={handleOpen}>Abrir carrito</button>
-          <Galeria />
-          <Carrito visible={visible} onClose={handleClose} />
+          <Router basename="/reactjs">
+            <Header />
+            <Switch>
+              <Route exact path="/">
+                <ItemList /> 
+              </Route>
+              <Route path="/item/:id">
+                <ItemDetail />
+              </Route>
+              <Route path="/cart">
+                <Cart />
+              </Route>
+            </Switch>
+          </Router>
         </CarritoProvider>
       </PetProvider>
     </div>
