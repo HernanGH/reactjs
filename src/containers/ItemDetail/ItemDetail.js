@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 
 import { getDataBase } from '../../api/firebase';
 import carritoContext from '../../contexts/carritoContext';
+import Title from 'antd/lib/typography/Title';
 
 
 const StyledCard = styled(Card)`
@@ -45,6 +46,8 @@ const ItemDetail = () => {
   }, []);
 
   return (
+    <>
+    <Title>Mira a tu futura mascota</Title>
     <Detail>
       {loading && (<Spin />)}
       {!loading && (<StyledCard
@@ -68,6 +71,7 @@ const ItemDetail = () => {
         />
       </StyledCard>)}
     </Detail>
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Typography, List, Space, Button } from 'antd';
 import { DeleteOutlined, HomeOutlined } from '@ant-design/icons';
-import 'firebase/firestore';
+import firebase from 'firebase';
 
 import carritoContext from '../../contexts/carritoContext';
 import styled from 'styled-components';
@@ -50,7 +50,7 @@ const Cart = () => {
     const order = {
       buyer: userInfo,
       items: carrito,
-      // date: firebase.firestore.Timestamp.fromDate(new Date()),
+      date: firebase.firestore.Timestamp.fromDate(new Date()),
       total: getTotal(carrito)
     };
 

@@ -27,7 +27,7 @@ const App = () => {
     const getPets = async () => {
       const db = getDataBase();
       const petCollection = db.collection('pets');
-      const petSnapshot = await petCollection.get();
+      const petSnapshot = await petCollection.get(); // trae todas las mascotas
       console.log(petSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
     };
     getPets();
@@ -37,7 +37,7 @@ const App = () => {
     const getCats = async () => {
       const db = getDataBase();
       const petCollection = db.collection('pets');
-      const petSnapshot = await petCollection.where('animal', '==', 'gato').get();
+      const petSnapshot = await petCollection.where('animal', '==', 'gato').get(); // trae solamente los gatos
       console.log(petSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
     };
     getCats();
@@ -47,7 +47,7 @@ const App = () => {
     const getYoungers = async () => {
       const db = getDataBase();
       const petCollection = db.collection('pets');
-      const petSnapshot = await petCollection.where('age', '<', 5).get();
+      const petSnapshot = await petCollection.where('age', '<', 5).get(); // trae solamente las mascotas menores a 5
       console.log(petSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
     };
     getYoungers();
