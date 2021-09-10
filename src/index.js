@@ -5,6 +5,7 @@ import App from './App';
 import Clase11 from './components/Clase11';
 import reportWebVitals from './reportWebVitals';
 import AfterClase11 from './components/AfterClase11';
+import Optimizacion from './components/Optimizacion';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.render(
       <App />
       {/* <Clase11 /> */}
       {/* <AfterClase11 /> */}
+      {/* <Optimizacion /> */}
     </>
   </React.StrictMode>,
   document.getElementById('root')
