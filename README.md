@@ -14,7 +14,7 @@ Correr la aplicacion localmente: [localhost:3000](http://localhost:3000/)
 
 Para buildear la app en modo de produccion
 
-### `npm build`
+### `npm run build`
 
 
 ## Navegacion de la app 
