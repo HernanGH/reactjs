@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 
 import { useState, useEffect } from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
