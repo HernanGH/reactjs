@@ -57,7 +57,7 @@ const App = () => {
     <div className="App">
       <PetProvider>
         <CarritoProvider>
-          <Router basename="/reactjs">
+          <Router basename="/">
             <Header />
             <Switch>
               <Route exact path="/">
